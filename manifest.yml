@@ -1,0 +1,25 @@
+modules:
+  macro:
+    - key: deep-analytics-for-pm
+      function: main
+      title: deep-analytics
+      description: Analyzes meeting notes and shows potential tasks
+  function:
+    - key: main
+      handler: index.run
+permissions:
+  scopes:
+    - read:jira-work
+    - read:page:confluence
+    - write:page:confluence
+    - write:confluence-content
+    - write:label:confluence
+    - storage:app
+  external:
+    fetch:
+      backend:
+        - api.openai.com
+app:
+  runtime:
+    snapshots: false
+  id: ari:cloud:ecosystem::app/eb93b615-2f76-47db-a504-a1efdc296b58
